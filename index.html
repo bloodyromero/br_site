@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow: hidden; /* Чтобы не было прокрутки */
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            pointer-events: none; /* Чтобы клики проходили сквозь заголовок */
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+        .block {
+            flex: 1; /* Все блоки равны */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Плавная анимация */
+            position: relative;
+            overflow: hidden;
+        }
+        /* Эффект при наведении: блок растягивается */
+        .block:hover {
+            flex: 2.5; 
+        }
+        .musician { background: #e74c3c; }
+        .arranger { background: #3498db; }
+        .teacher { background: #2ecc71; }
+        
+        /* Небольшой градиент для красоты */
+        .block::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Иван Иванов</h1>
+    </header>
+    <div class="container">
+        <div class="block musician">Музыкант</div>
+        <div class="block arranger">Аранжировщик</div>
+        <div class="block teacher">Преподаватель</div>
+    </div>
+</body>
+</html>
