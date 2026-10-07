@@ -103,6 +103,7 @@
             padding: 15px 0 20px 0;
             z-index: 10;
             pointer-events: none;
+            box-sizing: border-box;
         }
         footer p {
             margin: 0 auto;
@@ -111,9 +112,13 @@
             letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.85);
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
-            padding: 0 20px;
+            padding: 0 40px; /* Безопасные зоны по бокам на десктопе */
             text-align: center;
             max-width: 100%;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            line-height: 1.4;
         }
 
         /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
@@ -163,7 +168,7 @@
             footer {
                 position: static;
                 background-color: #111;
-                padding: 15px 20px 18px 20px;
+                padding: 14px 28px 16px 28px; /* Большие безопасные зоны по бокам */
                 flex-shrink: 0;
                 width: 100%;
                 box-sizing: border-box;
@@ -173,13 +178,15 @@
                 align-items: center;
             }
             footer p {
-                font-size: 0.85rem;
+                font-size: 0.82rem;
                 padding: 0;
-                letter-spacing: 0.5px;
+                letter-spacing: 0.3px;
                 text-align: center;
                 margin: 0 auto;
                 width: 100%;
-                line-height: 1.4;
+                line-height: 1.45;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
             }
         }
     </style>
