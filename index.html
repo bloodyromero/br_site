@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Илья Коростелёв</title>
+
+    <!-- Подключение шрифта Rubik Dirt с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+
     <style>
         body, html {
             margin: 0;
@@ -38,9 +44,10 @@
         }
         h1 {
             margin: 0;
-            font-size: 1.8rem;
+            font-family: 'Rubik Dirt', system-ui;
+            font-size: 2.2rem;
+            font-weight: 400;
             letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
         .container {
             display: flex;
@@ -118,7 +125,6 @@
                 display: flex;
                 flex-direction: column;
             }
-            /* Шапка: статичная, в одну строку, на чёрном фоне */
             header {
                 position: static;
                 display: flex;
@@ -138,11 +144,10 @@
                 flex-shrink: 0;
             }
             h1 {
-                font-size: 1.15rem;
+                font-size: 1.5rem;
                 letter-spacing: 1px;
                 text-align: left;
             }
-            /* Контейнер с блоками: занимает всё оставшееся место */
             .container {
                 flex: 1;
                 flex-direction: column;
@@ -152,7 +157,6 @@
             .block {
                 font-size: 1.4rem;
             }
-            /* Футер: статичный, сплошной чёрный блок */
             footer {
                 position: static;
                 background-color: #111;
