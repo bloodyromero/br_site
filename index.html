@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой сайт</title>
+    <title>Илья Коростелёв</title>
     <style>
         body, html {
             margin: 0;
@@ -12,21 +12,33 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #111;
             color: #fff;
-            overflow: hidden; /* Чтобы не было прокрутки */
+            overflow: hidden;
         }
         header {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             position: absolute;
             width: 100%;
             top: 0;
             z-index: 10;
-            pointer-events: none; /* Чтобы клики проходили сквозь заголовок */
+            pointer-events: none;
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            margin-bottom: 8px;
+            display: inline-block;
+            pointer-events: auto;
         }
         h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
         .container {
             display: flex;
@@ -34,38 +46,35 @@
             width: 100%;
         }
         .block {
-            flex: 1; /* Все блоки равны */
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Плавная анимация */
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             position: relative;
             overflow: hidden;
         }
-        /* Эффект при наведении: блок растягивается */
         .block:hover {
-            flex: 2.5; 
+            flex: 2.5;
         }
-.musician { 
-    background-image: url('main_left_1.png'); 
-    background-size: cover;
-    background-position: center;
-}
-.arranger { 
-    background-image: url('center_1.png'); 
-    background-size: cover;
-    background-position: center;
-}
-.teacher { 
-    background-image: url('main_right_1.png'); 
-    background-size: cover;
-    background-position: center;
-}
-        
-        /* Небольшой градиент для красоты */
+        .musician { 
+            background-image: url('main_left_1.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+        .arranger { 
+            background-image: url('center_1.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+        .teacher { 
+            background-image: url('main_right_1.png'); 
+            background-size: cover;
+            background-position: center;
+        }
         .block::after {
             content: '';
             position: absolute;
@@ -77,6 +86,7 @@
 </head>
 <body>
     <header>
+        <img src="avatar.png" alt="Илья Коростелёв" class="avatar">
         <h1>Илья Коростелёв</h1>
     </header>
     <div class="container">
