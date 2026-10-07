@@ -14,6 +14,8 @@
             color: #fff;
             overflow: hidden;
         }
+
+        /* ====== ДЕСКТОПНАЯ ВЕРСИЯ (по умолчанию) ====== */
         header {
             text-align: center;
             padding: 15px 0;
@@ -105,29 +107,62 @@
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
             padding: 0 20px;
         }
+
+        /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
         @media (max-width: 768px) {
-            .container {
+            body, html {
+                height: 100%;
+                overflow: hidden;
+            }
+            body {
+                display: flex;
                 flex-direction: column;
             }
-            .block {
-                font-size: 1.5rem;
+            /* Шапка: статичная, в одну строку, на чёрном фоне */
+            header {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                padding: 12px 15px;
+                background-color: #111;
+                flex-shrink: 0;
             }
             .avatar {
-                width: 65px;
-                height: 65px;
+                width: 50px;
+                height: 50px;
                 border-width: 2px;
-                margin-bottom: 5px;
+                margin-bottom: 0;
+                flex-shrink: 0;
             }
             h1 {
-                font-size: 1.3rem;
+                font-size: 1.15rem;
                 letter-spacing: 1px;
+                text-align: left;
             }
-            header {
-                padding: 10px 0;
+            /* Контейнер с блоками: занимает всё оставшееся место */
+            .container {
+                flex: 1;
+                flex-direction: column;
+                height: auto;
+                min-height: 0;
+            }
+            .block {
+                font-size: 1.4rem;
+            }
+            /* Футер: статичный, сплошной чёрный блок */
+            footer {
+                position: static;
+                background-color: #111;
+                padding: 15px 15px 18px 15px;
+                flex-shrink: 0;
             }
             footer p {
                 font-size: 0.8rem;
-                padding: 0 12px;
+                padding: 0;
+                letter-spacing: 0.5px;
             }
         }
     </style>
