@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Илья Коростелёв</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
-
     <style>
+        /* Подключение локального шрифта TagType */
+        @font-face {
+            font-family: 'TagType';
+            src: url('tagtype.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
@@ -43,9 +48,9 @@
         }
         h1 {
             margin: 0;
-            font-family: 'Rubik Dirt', system-ui;
-            font-size: 2.2rem;
-            font-weight: 400;
+            font-family: 'TagType', system-ui;
+            font-size: 2.4rem;
+            font-weight: normal;
             letter-spacing: 2px;
         }
         .container {
@@ -152,7 +157,7 @@
                 flex-shrink: 0;
             }
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 letter-spacing: 1px;
                 text-align: left;
             }
