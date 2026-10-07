@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Илья Коростелёв</title>
 
-    <!-- Подключение шрифта Rubik Dirt с Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
@@ -21,7 +20,7 @@
             overflow: hidden;
         }
 
-        /* ====== ДЕСКТОПНАЯ ВЕРСИЯ (по умолчанию) ====== */
+        /* ====== ДЕСКТОПНАЯ ВЕРСИЯ ====== */
         header {
             text-align: center;
             padding: 15px 0;
@@ -106,13 +105,15 @@
             pointer-events: none;
         }
         footer p {
-            margin: 0;
+            margin: 0 auto;
             font-size: 0.95rem;
             font-style: italic;
             letter-spacing: 1px;
             color: rgba(255, 255, 255, 0.85);
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
             padding: 0 20px;
+            text-align: center;
+            max-width: 100%;
         }
 
         /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
@@ -135,6 +136,8 @@
                 padding: 12px 15px;
                 background-color: #111;
                 flex-shrink: 0;
+                width: 100%;
+                box-sizing: border-box;
             }
             .avatar {
                 width: 50px;
@@ -160,13 +163,23 @@
             footer {
                 position: static;
                 background-color: #111;
-                padding: 15px 15px 18px 15px;
+                padding: 15px 20px 18px 20px;
                 flex-shrink: 0;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             footer p {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 padding: 0;
                 letter-spacing: 0.5px;
+                text-align: center;
+                margin: 0 auto;
+                width: 100%;
+                line-height: 1.4;
             }
         }
     </style>
