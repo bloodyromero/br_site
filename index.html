@@ -56,9 +56,14 @@
             transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             position: relative;
             overflow: hidden;
+            text-align: center;
+            padding: 0 10px;
         }
-        .block:hover {
-            flex: 2.5;
+        /* Эффект расширения ТОЛЬКО на устройствах с настоящей мышью */
+        @media (hover: hover) and (pointer: fine) {
+            .block:hover {
+                flex: 2.5;
+            }
         }
         .musician { 
             background-image: url('main_left_1.png'); 
@@ -100,6 +105,33 @@
             color: rgba(255, 255, 255, 0.85);
             text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
             padding: 0 20px;
+        }
+
+        /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Блоки друг под другом */
+            }
+            .block {
+                font-size: 1.5rem;
+            }
+            .avatar {
+                width: 65px;
+                height: 65px;
+                border-width: 2px;
+                margin-bottom: 5px;
+            }
+            h1 {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+            header {
+                padding: 10px 0;
+            }
+            footer p {
+                font-size: 0.8rem;
+                padding: 0 12px;
+            }
         }
     </style>
 </head>
