@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Илья Коростелёв</title>
+    <title>Bloody Romero</title>
 
     <style>
-        /* Подключение локального шрифта TagType */
+        /* Подключение локальных шрифтов */
         @font-face {
             font-family: 'TagType';
             src: url('tagtype.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Strogo';
+            src: url('strogo.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -51,13 +58,30 @@
             flex-shrink: 0;
             pointer-events: auto;
         }
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
         h1 {
             margin: 0;
             font-family: 'TagType', system-ui;
             font-size: 2.4rem;
             font-weight: normal;
             letter-spacing: 2px;
+            line-height: 1.1;
             text-align: left;
+        }
+        .subtitle {
+            margin: 4px 0 0 0;
+            font-family: 'Strogo', system-ui;
+            font-size: 1.1rem;
+            font-weight: normal;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: left;
+            text-transform: uppercase;
         }
         .container {
             display: flex;
@@ -156,16 +180,19 @@
                 box-sizing: border-box;
             }
             .avatar {
-                width: 50px;
-                height: 50px;
+                width: 55px;
+                height: 55px;
                 border-width: 2px;
-                margin-bottom: 0;
                 flex-shrink: 0;
             }
             h1 {
-                font-size: 1.7rem;
+                font-size: 1.6rem;
                 letter-spacing: 1px;
-                text-align: left;
+            }
+            .subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                margin-top: 2px;
             }
             .container {
                 flex: 1;
@@ -204,8 +231,11 @@
 </head>
 <body>
     <header>
-        <img src="avatar.png" alt="Илья Коростелёв" class="avatar">
-        <h1>Илья Коростелёв</h1>
+        <img src="avatar.png" alt="Bloody Romero" class="avatar">
+        <div class="title-block">
+            <h1>Bloody Romero</h1>
+            <p class="subtitle">Илья Коростелёв</p>
+        </div>
     </header>
     <div class="container">
         <div class="block musician">Музыкант</div>
