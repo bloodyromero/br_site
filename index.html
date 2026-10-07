@@ -48,20 +48,11 @@
             font-weight: 400;
             letter-spacing: 2px;
         }
-
-        /* Контейнер скошен на -4deg */
         .container {
             display: flex;
-            position: fixed;
-            top: -10vh;
-            left: -5vw;
-            width: 110vw;
-            height: 120vh;
-            transform: skewY(-4deg);
-            transform-origin: center center;
-            z-index: 1;
+            height: 100vh;
+            width: 100%;
         }
-
         .block {
             flex: 1;
             display: flex;
@@ -76,13 +67,6 @@
             text-align: center;
             padding: 0 10px;
         }
-
-        /* Текст компенсирует наклон контейнера */
-        .block span {
-            display: inline-block;
-            transform: skewY(4deg);
-        }
-
         @media (hover: hover) and (pointer: fine) {
             .block:hover {
                 flex: 2.5;
@@ -110,7 +94,6 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
             pointer-events: none;
         }
-
         footer {
             position: absolute;
             bottom: 0;
@@ -138,7 +121,7 @@
             line-height: 1.4;
         }
 
-        /* ====== МОБИЛЬНАЯ ВЕРСИЯ (скошенность отключена) ====== */
+        /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
         @media (max-width: 768px) {
             body, html {
                 height: 100%;
@@ -173,27 +156,15 @@
                 letter-spacing: 1px;
                 text-align: left;
             }
-
-            /* Возвращаем контейнер в нормальное положение */
             .container {
-                position: static;
-                top: auto;
-                left: auto;
-                width: 100%;
-                height: auto;
-                transform: none;
                 flex: 1;
                 flex-direction: column;
+                height: auto;
                 min-height: 0;
             }
             .block {
                 font-size: 1.4rem;
             }
-            /* Текст без компенсации */
-            .block span {
-                transform: none;
-            }
-
             footer {
                 position: static;
                 background-color: #111;
@@ -226,9 +197,9 @@
         <h1>Илья Коростелёв</h1>
     </header>
     <div class="container">
-        <div class="block musician"><span>Музыкант</span></div>
-        <div class="block arranger"><span>Аранжировщик</span></div>
-        <div class="block teacher"><span>Преподаватель</span></div>
+        <div class="block musician">Музыкант</div>
+        <div class="block arranger">Аранжировщик</div>
+        <div class="block teacher">Преподаватель</div>
     </div>
     <footer>
         <p id="slogan-text"></p>
