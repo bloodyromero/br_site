@@ -82,6 +82,25 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
             pointer-events: none;
         }
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0 20px 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.95rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
@@ -94,5 +113,20 @@
         <div class="block arranger">Аранжировщик</div>
         <div class="block teacher">Преподаватель</div>
     </div>
+    <footer>
+        <p id="slogan-text"></p>
+    </footer>
+    <script>
+        const slogans = [
+            "Играю, аранжирую, учу. Иногда даже одновременно. Обычно — нет.",
+            "Музыкант, аранжировщик, преподаватель. И да, я всё ещё жду, когда это станет прибыльным.",
+            "Три пути, один человек. Выбирайте, но учтите: я всё равно буду вас учить, аранжировать и играть.",
+            "Сайт собран на коленке. Как и большинство моих аранжировок. Но зато с душой.",
+            "Здесь могла быть ваша реклама. Но я музыкант, а не маркетолог.",
+            "Музыка — это не работа. Это диагноз."
+        ];
+        document.getElementById('slogan-text').textContent = 
+            slogans[Math.floor(Math.random() * slogans.length)];
+    </script>
 </body>
 </html>
