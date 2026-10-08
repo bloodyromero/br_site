@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Илья Коростелёв — Музыкант</title>
+
+    <style>
+        @font-face {
+            font-family: 'TagType';
+            src: url('tagtype.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Strogo';
+            src: url('strogo.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ====== ШАПКА (как на главной) ====== */
+        header {
+            position: relative;
+            width: 100%;
+            padding: 20px 40px;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .profile-block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            background: transparent;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        h1 {
+            margin: 0;
+            font-family: 'TagType', system-ui;
+            font-size: 2.4rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            text-align: left;
+        }
+        .subtitle {
+            margin: 10px 0 0 0;
+            font-family: 'Strogo', system-ui;
+            font-size: 1.1rem;
+            font-weight: normal;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 14px;
+        }
+        .social-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.25s ease, filter 0.25s ease;
+            display: block;
+        }
+        .social-icon:hover {
+            transform: scale(1.12);
+            filter: brightness(1.3);
+        }
+
+        /* ====== КОНТЕНТ ====== */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 40px 60px 40px;
+            box-sizing: border-box;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .page-title {
+            font-family: 'Strogo', system-ui;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-family: 'Strogo', system-ui;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 0 15px 0;
+            font-weight: normal;
+        }
+        .section p, .section ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            padding: 0;
+        }
+        .section ul {
+            list-style: none;
+        }
+        .section ul li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 18px;
+        }
+        .section ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact {
+            margin-top: 50px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .contact p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
+        /* ====== ФУТЕР ====== */
+        footer {
+            position: static;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0 30px 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .kladovaya-btn {
+            display: inline-block;
+            font-family: 'Strogo', system-ui;
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 10px 28px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+        .kladovaya-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        footer p {
+            margin: 0 auto;
+            font-size: 0.9rem;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            line-height: 1.4;
+        }
+
+        /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 12px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+            }
+            .profile-block {
+                gap: 10px;
+            }
+            .avatar {
+                width: 50px;
+                height: 50px;
+            }
+            h1 {
+                font-size: 1.35rem;
+                letter-spacing: 1px;
+            }
+            .subtitle {
+                font-size: 0.7rem;
+                letter-spacing: 1.5px;
+                margin-top: 5px;
+            }
+            .social-links {
+                position: static;
+                transform: none;
+                gap: 8px;
+            }
+            .social-icon {
+                width: 36px;
+                height: 36px;
+            }
+            .content {
+                padding: 10px 20px 40px 20px;
+            }
+            .page-title {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+            .intro {
+                font-size: 1rem;
+            }
+            .contact {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Профиль по центру -->
+        <div class="profile-block">
+            <img src="avatar.png" alt="Bloody Romero" class="avatar">
+            <div class="title-block">
+                <h1>Bloody Romero</h1>
+                <p class="subtitle">Илья Коростелёв</p>
+            </div>
+        </div>
+
+        <!-- Соцсети справа -->
+        <div class="social-links">
+            <a href="https://t.me/bloodyromero" target="_blank" rel="noopener">
+                <img src="tg.png" alt="Telegram" class="social-icon">
+            </a>
+            <a href="https://vk.com/bloodyromero" target="_blank" rel="noopener">
+                <img src="vk.png" alt="VK" class="social-icon">
+            </a>
+            <a href="https://youtube.com/@bloodyromero" target="_blank" rel="noopener">
+                <img src="yt.png" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+    </header>
+
+    <main class="content">
+        <a href="index.html" class="back-link">← На главную</a>
+
+        <h1 class="page-title">Музыкант</h1>
+
+        <p class="intro">
+            Илья Коростелёв — музыкант, клавишник, пианист, гитарист. Играю в любых форматах: соло, в группе, сессионно, аккомпанемент. Опыт выступлений — около 15 лет.
+        </p>
+
+        <div class="section">
+            <h2>География и опыт</h2>
+            <p>Россия: Челябинск, Сочи, Магнитогорск, Миасс, Москва, Санкт-Петербург и другие города. За рубежом: Италия, Турция, Китай, Вьетнам (в том числе работа по контракту). Участник джазовых фестивалей <em>Baby Jazz</em> и <em>PetroJazz</em>, городских мероприятий и фестивалей.</p>
+        </div>
+
+        <div class="section">
+            <h2>Жанры</h2>
+            <p>Эстрада, джаз, рок, hip-hop.</p>
+        </div>
+
+        <div class="section">
+            <h2>Инструменты</h2>
+            <p>Электрогитара Jim Root Strat, Roland Juno Gi, Korg Kross 2, Korg Triton Taktile. Также есть дополнительное оборудование, сэмплеры и MIDI-клавиатуры.</p>
+        </div>
+
+        <div class="section">
+            <h2>Сотрудничество</h2>
+            <ul>
+                <li>Манижа</li>
+                <li>Июлина Попова</li>
+                <li>Юлия Коган</li>
+                <li>Пётр Савицкий</li>
+                <li>Dedoox</li>
+                <li>Bhima U</li>
+                <li>JD Band</li>
+                <li>и другие артисты</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Театр и композиция</h2>
+            <p>Есть опыт работы в театрах в качестве композитора и музыканта.</p>
+        </div>
+
+        <div class="section">
+            <h2>Медиа</h2>
+            <p>Ссылки на видео и аудио будут добавлены позже. А пока — загляните в мои соцсети (в шапке сайта).</p>
+        </div>
+
+        <div class="contact">
+            <p>Если я могу быть полезен — напишите. Всегда открыт к интересным проектам.</p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="kladovaya.html" class="kladovaya-btn">Кладовая</a>
+        <p id="slogan-text"></p>
+    </footer>
+
+    <script>
+        const slogans = [
+            "Играю, аранжирую, учу. Иногда даже одновременно. Обычно — нет.",
+            "Музыкант, аранжировщик, преподаватель. И да, я всё ещё жду, когда это станет прибыльным.",
+            "Три пути, один человек. Выбирайте, но учтите: я всё равно буду вас учить, аранжировать и играть.",
+            "Сайт собран на коленке. Как и большинство моих аранжировок. Но зато с душой.",
+            "Здесь могла быть ваша реклама. Но я музыкант, а не маркетолог.",
+            "Музыка — это не работа. Это диагноз.",
+            "Этот сайт существует. Как и моя карьера. Пока что.",
+            "Сделал сайт сам. Ну как сам — нейросеть помогала. Но идея моя. Честно.",
+            "Музыкант, аранжировщик, преподаватель. А ещё умею печь хлеб.",
+            "Синтез звука — это магия. Только с проводами и без жертвоприношений.",
+            "Преподаватель, аранжировщик, музыкант. Три профессии, одна зарплата. Шучу. Зарплаты нет."
+        ];
+        document.getElementById('slogan-text').textContent = 
+            slogans[Math.floor(Math.random() * slogans.length)];
+    </script>
+</body>
+</html>
