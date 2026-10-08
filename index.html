@@ -36,15 +36,50 @@
             position: absolute;
             width: 100%;
             top: 0;
-            padding: 20px 0;
+            padding: 20px 40px;
             z-index: 10;
             pointer-events: none;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
-            gap: 16px;
+            justify-content: space-between;
+            gap: 20px;
             box-sizing: border-box;
+        }
+
+        /* --- Соцсети (слева) --- */
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 14px;
+            pointer-events: auto;
+            flex-shrink: 0;
+        }
+        .social-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            display: block;
+        }
+        .social-icon:hover {
+            transform: scale(1.12);
+            box-shadow: 0 4px 18px rgba(255, 255, 255, 0.4);
+            border-color: #fff;
+        }
+
+        /* --- Профиль (справа) --- */
+        .profile-block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            pointer-events: auto;
+            flex-shrink: 0;
         }
         .avatar {
             width: 80px;
@@ -54,7 +89,6 @@
             border: 1.5px solid rgba(255, 255, 255, 0.9);
             display: inline-block;
             flex-shrink: 0;
-            pointer-events: auto;
         }
         .title-block {
             display: flex;
@@ -81,6 +115,8 @@
             text-align: left;
             text-transform: uppercase;
         }
+
+        /* --- Блоки --- */
         .container {
             display: flex;
             height: 100vh;
@@ -127,6 +163,8 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
             pointer-events: none;
         }
+
+        /* --- Футер --- */
         footer {
             position: absolute;
             bottom: 0;
@@ -169,28 +207,38 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
-                gap: 12px;
-                padding: 12px 15px;
+                justify-content: space-between;
+                gap: 8px;
+                padding: 10px 12px;
                 background-color: #111;
                 flex-shrink: 0;
                 width: 100%;
                 box-sizing: border-box;
             }
-            .avatar {
-                width: 55px;
-                height: 55px;
+            .social-links {
+                gap: 8px;
+            }
+            .social-icon {
+                width: 36px;
+                height: 36px;
                 border-width: 1px;
-                flex-shrink: 0;
+            }
+            .profile-block {
+                gap: 10px;
+            }
+            .avatar {
+                width: 50px;
+                height: 50px;
+                border-width: 1px;
             }
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.35rem;
                 letter-spacing: 1px;
             }
             .subtitle {
-                font-size: 0.8rem;
-                letter-spacing: 2px;
-                margin-top: 6px;
+                font-size: 0.7rem;
+                letter-spacing: 1.5px;
+                margin-top: 5px;
             }
             .container {
                 flex: 1;
@@ -229,20 +277,39 @@
 </head>
 <body>
     <header>
-        <img src="avatar.png" alt="Bloody Romero" class="avatar">
-        <div class="title-block">
-            <h1>Bloody Romero</h1>
-            <p class="subtitle">Илья Коростелёв</p>
+        <!-- Соцсети слева -->
+        <div class="social-links">
+            <a href="https://t.me/username" target="_blank" rel="noopener">
+                <img src="tg.png" alt="Telegram" class="social-icon">
+            </a>
+            <a href="mailto:you@example.com">
+                <img src="mail.png" alt="Email" class="social-icon">
+            </a>
+            <a href="https://youtube.com/@username" target="_blank" rel="noopener">
+                <img src="yt.png" alt="YouTube" class="social-icon">
+            </a>
+        </div>
+
+        <!-- Профиль справа -->
+        <div class="profile-block">
+            <img src="avatar.png" alt="Bloody Romero" class="avatar">
+            <div class="title-block">
+                <h1>Bloody Romero</h1>
+                <p class="subtitle">Илья Коростелёв</p>
+            </div>
         </div>
     </header>
+
     <div class="container">
         <div class="block musician">Музыкант</div>
         <div class="block arranger">Аранжировщик</div>
         <div class="block teacher">Преподаватель</div>
     </div>
+
     <footer>
         <p id="slogan-text"></p>
     </footer>
+
     <script>
         const slogans = [
             "Играю, аранжирую, учу. Иногда даже одновременно. Обычно — нет.",
