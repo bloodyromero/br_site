@@ -42,44 +42,17 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: center;
             box-sizing: border-box;
         }
 
-        /* --- Соцсети (слева) --- */
-        .social-links {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 14px;
-            pointer-events: auto;
-            flex-shrink: 0;
-        }
-        .social-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            display: block;
-        }
-        .social-icon:hover {
-            transform: scale(1.12);
-            box-shadow: 0 4px 18px rgba(255, 255, 255, 0.4);
-            border-color: #fff;
-        }
-
-        /* --- Профиль (справа) --- */
+        /* --- Профиль (по центру) --- */
         .profile-block {
             display: flex;
             flex-direction: row;
             align-items: center;
             gap: 16px;
             pointer-events: auto;
-            flex-shrink: 0;
         }
         .avatar {
             width: 80px;
@@ -114,6 +87,34 @@
             color: rgba(255, 255, 255, 0.85);
             text-align: left;
             text-transform: uppercase;
+        }
+
+        /* --- Соцсети (абсолютно справа) --- */
+        .social-links {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 14px;
+            pointer-events: auto;
+        }
+        .social-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            display: block;
+        }
+        .social-icon:hover {
+            transform: scale(1.12);
+            box-shadow: 0 4px 18px rgba(255, 255, 255, 0.4);
+            border-color: #fff;
         }
 
         /* --- Блоки --- */
@@ -215,14 +216,7 @@
                 width: 100%;
                 box-sizing: border-box;
             }
-            .social-links {
-                gap: 8px;
-            }
-            .social-icon {
-                width: 36px;
-                height: 36px;
-                border-width: 1px;
-            }
+            /* Профиль на мобильном — уже не по центру, а слева, чтобы иконки влезли */
             .profile-block {
                 gap: 10px;
             }
@@ -239,6 +233,16 @@
                 font-size: 0.7rem;
                 letter-spacing: 1.5px;
                 margin-top: 5px;
+            }
+            .social-links {
+                position: static;
+                transform: none;
+                gap: 8px;
+            }
+            .social-icon {
+                width: 36px;
+                height: 36px;
+                border-width: 1px;
             }
             .container {
                 flex: 1;
@@ -277,7 +281,16 @@
 </head>
 <body>
     <header>
-        <!-- Соцсети слева -->
+        <!-- Профиль по центру -->
+        <div class="profile-block">
+            <img src="avatar.png" alt="Bloody Romero" class="avatar">
+            <div class="title-block">
+                <h1>Bloody Romero</h1>
+                <p class="subtitle">Илья Коростелёв</p>
+            </div>
+        </div>
+
+        <!-- Соцсети абсолютно справа -->
         <div class="social-links">
             <a href="https://t.me/username" target="_blank" rel="noopener">
                 <img src="tg.png" alt="Telegram" class="social-icon">
@@ -288,15 +301,6 @@
             <a href="https://youtube.com/@username" target="_blank" rel="noopener">
                 <img src="yt.png" alt="YouTube" class="social-icon">
             </a>
-        </div>
-
-        <!-- Профиль справа -->
-        <div class="profile-block">
-            <img src="avatar.png" alt="Bloody Romero" class="avatar">
-            <div class="title-block">
-                <h1>Bloody Romero</h1>
-                <p class="subtitle">Илья Коростелёв</p>
-            </div>
         </div>
     </header>
 
