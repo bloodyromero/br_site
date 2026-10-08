@@ -59,7 +59,6 @@
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1.5px solid rgba(255, 255, 255, 0.9);
             display: inline-block;
             flex-shrink: 0;
         }
@@ -106,15 +105,14 @@
             height: 46px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            border: none;
             cursor: pointer;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.25s ease, filter 0.25s ease;
             display: block;
         }
         .social-icon:hover {
             transform: scale(1.12);
-            box-shadow: 0 4px 18px rgba(255, 255, 255, 0.4);
-            border-color: #fff;
+            filter: brightness(1.3);
         }
 
         /* --- Блоки --- */
@@ -216,14 +214,12 @@
                 width: 100%;
                 box-sizing: border-box;
             }
-            /* Профиль на мобильном — уже не по центру, а слева, чтобы иконки влезли */
             .profile-block {
                 gap: 10px;
             }
             .avatar {
                 width: 50px;
                 height: 50px;
-                border-width: 1px;
             }
             h1 {
                 font-size: 1.35rem;
@@ -242,7 +238,6 @@
             .social-icon {
                 width: 36px;
                 height: 36px;
-                border-width: 1px;
             }
             .container {
                 flex: 1;
